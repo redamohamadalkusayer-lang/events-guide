@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كل الفعاليات - دليل فعاليات الجامعة الافتراضية</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body id="top">
+
+<!-- الهيدر: الشعار وقائمة التنقل -->
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-main">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="assets/img/logo.svg" width="34" height="34" alt="شعار الدليل"> دليل الفعاليات</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">كل الفعاليات</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+        </ul>
+        <button class="btn btn-sm btn-outline-light" onclick="toggleDark()">الوضع الداكن</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- المحتوى -->
+<main class="container py-4">
+<h1 class="h3 mb-3">كل الفعاليات</h1>
+<div class="toolbar">
+  <input type="text" id="q" class="form-control" placeholder="ابحث باسم الفعالية" onkeyup="applyFilter()">
+  <select id="catSel" class="form-select" onchange="applyFilter()">
+    <option value="all">كل التصنيفات</option><option value="tech">تقنية</option><option value="music">موسيقى</option><option value="sport">رياضة</option><option value="culture">ثقافة</option><option value="family">عائلي</option>
+  </select>
+  <select id="placeSel" class="form-select" onchange="applyFilter()">
+    <option value="all">كل المواقع</option><option value="online">عبر الإنترنت</option><option value="damascus">دمشق</option><option value="aleppo">حلب</option>
+  </select>
+  <input type="date" id="fromDate" class="form-control" title="من تاريخ" onchange="applyFilter()">
+  <input type="date" id="toDate" class="form-control" title="إلى تاريخ" onchange="applyFilter()">
+  <button class="btn btn-dark" onclick="resetFilter()">عرض الكل</button>
+</div>
+<div class="row">
+  <div class="col-md-6 col-lg-4 mb-4 ev" data-cat="tech" data-place="online" data-date="2026-11-14">
+    <div class="card h-100">
+      <img src="assets/img/ev1.jpg" class="card-img-top" alt="ملتقى التوظيف الافتراضي">
+      <div class="card-body">
+        <div class="mline"><span class="badge c-tech">تقنية</span><span class="when"></span></div>
+        <h3 class="h5 mt-2">ملتقى التوظيف الافتراضي</h3>
+        <p class="meta">14 تشرين الثاني 2026، 6:00 مساءً</p>
+        <p class="meta">عبر الإنترنت</p>
+        <p>لقاء مباشر بين طلاب الجامعة وشركات برمجة محلية وعربية.</p>
+        <a href="event.html" class="btn btn-warning btn-sm">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-4 ev" data-cat="music" data-place="damascus" data-date="2026-11-18">
+    <div class="card h-100">
+      <img src="assets/img/ev2.jpg" class="card-img-top" alt="أمسية العود والشعر">
+      <div class="card-body">
+        <div class="mline"><span class="badge c-music">موسيقى</span><span class="when"></span></div>
+        <h3 class="h5 mt-2">أمسية العود والشعر</h3>
+        <p class="meta">18 تشرين الثاني 2026، 7:30 مساءً</p>
+        <p class="meta">قاعة الندوات، دمشق</p>
+        <p>عزف منفرد على العود مع قراءات شعرية لطلاب من كليات مختلفة.</p>
+        <a href="event2.html" class="btn btn-warning btn-sm">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-4 ev" data-cat="sport" data-place="online" data-date="2026-11-21">
+    <div class="card h-100">
+      <img src="assets/img/ev3.jpg" class="card-img-top" alt="بطولة الشطرنج بين الطلاب">
+      <div class="card-body">
+        <div class="mline"><span class="badge c-sport">رياضة</span><span class="when"></span></div>
+        <h3 class="h5 mt-2">بطولة الشطرنج بين الطلاب</h3>
+        <p class="meta">21 تشرين الثاني 2026، 4:00 مساءً</p>
+        <p class="meta">عبر الإنترنت</p>
+        <p>بطولة إقصائية عن بعد بمشاركة طلاب البرامج كلها.</p>
+        <a href="event3.html" class="btn btn-warning btn-sm">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-4 ev" data-cat="culture" data-place="aleppo" data-date="2026-11-27">
+    <div class="card h-100">
+      <img src="assets/img/ev4.jpg" class="card-img-top" alt="معرض الكتاب الجامعي">
+      <div class="card-body">
+        <div class="mline"><span class="badge c-culture">ثقافة</span><span class="when"></span></div>
+        <h3 class="h5 mt-2">معرض الكتاب الجامعي</h3>
+        <p class="meta">27 تشرين الثاني 2026، 10:00 صباحاً</p>
+        <p class="meta">مركز الجامعة، حلب</p>
+        <p>كتب مستعملة وجديدة بأسعار رمزية مع جلسات توقيع لمؤلفين.</p>
+        <a href="event4.html" class="btn btn-warning btn-sm">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-4 ev" data-cat="family" data-place="damascus" data-date="2026-12-05">
+    <div class="card h-100">
+      <img src="assets/img/ev5.jpg" class="card-img-top" alt="يوم العائلة الجامعي">
+      <div class="card-body">
+        <div class="mline"><span class="badge c-family">عائلي</span><span class="when"></span></div>
+        <h3 class="h5 mt-2">يوم العائلة الجامعي</h3>
+        <p class="meta">5 كانون الأول 2026، 11:00 صباحاً</p>
+        <p class="meta">حديقة الجامعة، دمشق</p>
+        <p>ألعاب ومسابقات وغداء مشترك للطلاب وعائلاتهم.</p>
+        <a href="event5.html" class="btn btn-warning btn-sm">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-4 ev" data-cat="tech" data-place="online" data-date="2026-12-10">
+    <div class="card h-100">
+      <img src="assets/img/ev6.jpg" class="card-img-top" alt="ورشة أساسيات الويب">
+      <div class="card-body">
+        <div class="mline"><span class="badge c-tech">تقنية</span><span class="when"></span></div>
+        <h3 class="h5 mt-2">ورشة أساسيات الويب</h3>
+        <p class="meta">10 كانون الأول 2026، 5:00 مساءً</p>
+        <p class="meta">عبر الإنترنت</p>
+        <p>ورشة عملية لبناء أول صفحة ويب باستخدام HTML وCSS وJavaScript.</p>
+        <a href="event6.html" class="btn btn-warning btn-sm">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="noRes" class="alert alert-warning" style="display:none">لا توجد فعاليات بهذه الخيارات. جرّب تصنيفاً أو موقعاً آخر.</div>
+</main>
+
+<!-- الفوتر -->
+<footer>
+  <div class="container">
+    <div class="fcols">
+      <div>
+        <h5>دليل فعاليات الجامعة الافتراضية</h5>
+        <p>مشروع مقرر برمجة الويب BWP401.</p>
+      </div>
+      <div>
+        <h5>تواصل معنا</h5>
+        <p class="mb-1">البريد: events@svu-guide.example</p>
+        <p>الهاتف: 011 000 0000</p>
+      </div>
+      <div>
+        <h5>حساباتنا</h5>
+        <p class="mb-1"><a href="https://www.facebook.com/">فيسبوك</a></p>
+        <p class="mb-1"><a href="https://www.instagram.com/">إنستغرام</a></p>
+        <p><a href="https://t.me/">تيليغرام</a></p>
+      </div>
+    </div>
+    <p class="small mt-3">جميع الحقوق محفوظة 2026</p>
+  </div>
+</footer>
+
+<a href="#top" id="toTop">للأعلى</a>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
